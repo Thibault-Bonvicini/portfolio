@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Thibault Bonvicini, en reconversion vers le QA Testing dans le jeu vidéo.">
+  <title>Thibault Bonvicini — QA Tester Junior</title>
+  <style>
+    :root {
+      --bg: #f4f7fc;
+      --surface: #ffffff;
+      --navy: #0e2246;
+      --blue: #2361cf;
+      --blue-soft: #eaf1ff;
+      --text: #263348;
+      --muted: #667085;
+      --border: #dfe7f2;
+      --shadow: 0 14px 34px rgba(14,34,70,.08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .eyebrow { display:inline-block; color:var(--blue); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .section { padding: 84px 0; }
+    .section-title { margin: 8px 0 12px; color:var(--navy); font-size:clamp(1.9rem,4vw,2.7rem); line-height:1.15; }
+    .section-lead { margin:0; max-width:720px; color:var(--muted); }
+    .nav { position:sticky; top:0; z-index:20; background:rgba(14,34,70,.96); backdrop-filter:blur(12px); color:#fff; }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight:800; letter-spacing:.02em; }
+    .nav-links { display:flex; align-items:center; gap:28px; font-size:.94rem; }
+    .nav-links a { opacity:.82; transition:opacity .2s ease; }
+    .nav-links a:hover { opacity:1; }
+    .nav-cv { padding:10px 16px; border:1px solid rgba(255,255,255,.35); border-radius:10px; font-weight:700; }
+    .hero { padding: 90px 0 56px; background:radial-gradient(circle at 78% 25%, #e0ebff 0, transparent 30%), linear-gradient(180deg,#f8faff 0%,var(--bg) 100%); }
+    .hero-grid { display:grid; grid-template-columns:1.12fr .88fr; gap:64px; align-items:center; }
+    .hero h1 { margin:10px 0 18px; max-width:760px; color:var(--navy); font-size:clamp(2.8rem,6vw,5.4rem); line-height:.98; letter-spacing:-.045em; }
+    .hero p { max-width:720px; margin:0; color:#536176; font-size:1.06rem; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border-radius:11px; font-weight:800; transition:transform .2s ease, box-shadow .2s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--blue); color:#fff; box-shadow:0 10px 24px rgba(35,97,207,.22); }
+    .btn-secondary { background:#fff; color:var(--navy); border:1px solid var(--border); }
+    .visual-placeholder { min-height:360px; border:1px dashed #aebbd0; border-radius:26px; display:grid; place-items:center; padding:32px; color:#8794a8; text-align:center; background:rgba(255,255,255,.5); }
+    .visual-placeholder strong { display:block; color:#63728a; margin-bottom:5px; }
+    .stats { margin-top:58px; display:grid; grid-template-columns:repeat(3,1fr); background:#fff; border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+    .stat { padding:25px 30px; }
+    .stat + .stat { border-left:1px solid var(--border); }
+    .stat strong { display:block; color:var(--navy); font-size:1.05rem; margin-bottom:3px; }
+    .stat span { color:var(--muted); font-size:.92rem; }
+    .projects-head { margin-bottom:34px; }
+    .project-featured { display:grid; grid-template-columns:1.12fr .88fr; min-height:360px; overflow:hidden; background:#fff; border:1px solid var(--border); border-radius:24px; box-shadow:var(--shadow); }
+    .project-copy { padding:44px; }
+    .project-copy h3, .project-card h3 { color:var(--navy); margin:8px 0 10px; font-size:1.55rem; }
+    .project-copy p, .project-card p { color:var(--muted); }
+    .project-meta { color:var(--blue); font-weight:800; font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
+    .project-facts { display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 28px; }
+    .pill { padding:7px 11px; background:var(--blue-soft); color:var(--blue); border-radius:999px; font-size:.82rem; font-weight:800; }
+    .project-visual { display:grid; place-items:center; min-height:260px; padding:30px; color:#8794a8; text-align:center; border-left:1px dashed #bcc8da; background:#f7f9fd; }
+    .project-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; }
+    .project-card { padding:34px; background:#fff; border:1px solid var(--border); border-radius:var(--radius); box-shadow:0 10px 28px rgba(14,34,70,.05); }
+    .text-link { color:var(--blue); font-weight:800; }
+    .process { background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .process-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:34px; }
+    .step { position:relative; min-height:205px; padding:26px 20px; border:1px solid var(--border); border-radius:16px; background:#fbfcff; }
+    .step-number { width:38px; height:38px; display:grid; place-items:center; border-radius:50%; background:var(--blue); color:#fff; font-weight:900; margin-bottom:20px; }
+    .step h3 { margin:0 0 8px; color:var(--navy); font-size:1.02rem; }
+    .step p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.55; }
+    .about-card { display:grid; grid-template-columns:.75fr 1.25fr; gap:54px; align-items:center; padding:48px; background:#fff; border:1px solid var(--border); border-radius:24px; box-shadow:var(--shadow); }
+    .about-card p { color:var(--muted); margin:0 0 20px; }
+    .cta { padding:72px 0; }
+    .cta-box { padding:54px; text-align:center; color:#fff; background:linear-gradient(135deg,#0e2246,#173d79); border-radius:26px; box-shadow:0 18px 40px rgba(14,34,70,.16); }
+    .cta-box h2 { max-width:760px; margin:0 auto 14px; font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.15; }
+    .cta-box p { margin:0 auto 26px; max-width:680px; color:#d9e5fb; }
+    .cta-box .btn-secondary { border-color:transparent; }
+    footer { padding:32px 0; color:#aebbd0; background:#091a36; }
+    .footer-inner { display:flex; justify-content:space-between; gap:24px; align-items:center; }
+    .footer-links { display:flex; gap:20px; }
+    @media (max-width: 850px) {
+      .nav-links a:not(.nav-cv) { display:none; }
+      .hero-grid, .project-featured, .about-card { grid-template-columns:1fr; }
+      .hero { padding-top:64px; }
+      .visual-placeholder { min-height:230px; }
+      .project-visual { border-left:0; border-top:1px dashed #bcc8da; }
+      .process-grid { grid-template-columns:repeat(2,1fr); }
+      .project-grid { grid-template-columns:1fr; }
+      .stats { grid-template-columns:1fr; }
+      .stat + .stat { border-left:0; border-top:1px solid var(--border); }
+    }
+    @media (max-width: 560px) {
+      .container { width:min(calc(100% - 28px),var(--max)); }
+      .section { padding:64px 0; }
+      .hero h1 { font-size:2.8rem; }
+      .project-copy, .project-card, .about-card, .cta-box { padding:28px; }
+      .process-grid { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#accueil">THIBAULT BONVICINI</a>
+      <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#projets">Projets</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cv" href="#" aria-label="Voir le CV de Thibault Bonvicini">Voir mon CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">QA Tester Junior</span>
+          <h1>Tester.<br>Comprendre.<br>Améliorer.</h1>
+          <p>En reconversion vers le QA Testing dans le jeu vidéo, je m’intéresse autant au fonctionnement d’un système qu’à ce qui se passe lorsqu’un joueur commence à en explorer les limites. J’aime observer, formuler des hypothèses et pousser un système au-delà de son utilisation attendue pour comprendre ce qui se passe réellement.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projets">Découvrir mes projets</a>
+            <a class="btn btn-secondary" href="#">Voir mon CV</a>
+          </div>
+        </div>
+        <div class="visual-placeholder" aria-label="Emplacement réservé à un futur visuel">
+          <div><strong>Visuel à sélectionner</strong>Zone volontairement laissée neutre pour le moment.</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>QA</strong><span>Tests fonctionnels &amp; exploratoires</span></div>
+        <div class="stat"><strong>Unity</strong><span>Projet personnel en développement</span></div>
+        <div class="stat"><strong>Communauté</strong><span>Animation &amp; modération · 1 200+ membres</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="projets">
+      <div class="container">
+        <div class="projects-head">
+          <span class="eyebrow">Portfolio</span>
+          <h2 class="section-title">Mes projets</h2>
+        </div>
+
+        <article class="project-featured">
+          <div class="project-copy">
+            <div class="project-meta">QA · Bêta-test · 2026</div>
+            <h3>Monster Hunter Outlanders</h3>
+            <p>Participation à la troisième bêta fermée de Monster Hunter Outlanders avec une approche orientée QA : exploration des systèmes, reproduction et analyse d’anomalies, documentation des résultats et retests.</p>
+            <div class="project-facts">
+              <span class="pill">9 rapports documentés</span>
+              <span class="pill">5 études de cas présentées</span>
+            </div>
+            <a class="text-link" href="projets/outlanders.html">Découvrir le projet QA →</a>
+          </div>
+          <div class="project-visual">Emplacement réservé au visuel Outlanders</div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-meta">Game Design · Unity · Projet personnel</div>
+            <h3>Blob in the Dark</h3>
+            <p>Conception d’un jeu mobile 2.5D mêlant exploration, lumière et observation de l’environnement. Un projet personnel développé avec Unity pour mettre en pratique le game design et apprendre progressivement le développement d’un prototype jouable.</p>
+            <a class="text-link" href="#">Découvrir le projet →</a>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">Community · Monster Hunter World · 2018–2019</div>
+            <h3>La Guilde des Artilleurs</h3>
+            <p>Animation et modération d’une communauté de plus de 1 200 membres autour de Monster Hunter World, accompagnée de la création et de l’organisation d’un serveur Discord dédié à l’entraide et à la recherche de groupes.</p>
+            <a class="text-link" href="#">Découvrir le projet →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="demarche">
+      <div class="container">
+        <span class="eyebrow">Méthode</span>
+        <h2 class="section-title">Ma démarche</h2>
+        <div class="process-grid">
+          <article class="step"><div class="step-number">1</div><h3>Observer</h3><p>Identifier un comportement inattendu ou une incohérence.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>Questionner</h3><p>Formuler des hypothèses sans partir du principe qu’il s’agit nécessairement d’un bug.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>Tester</h3><p>Faire varier les conditions pour reproduire et isoler le comportement.</p></article>
+          <article class="step"><div class="step-number">4</div><h3>Documenter</h3><p>Consigner les étapes, le contexte, les résultats et les preuves utiles.</p></article>
+          <article class="step"><div class="step-number">5</div><h3>Retester</h3><p>Vérifier le comportement après modification et remettre en question l’hypothèse initiale si nécessaire.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apropos">
+      <div class="container">
+        <div class="about-card">
+          <div>
+            <span class="eyebrow">À propos</span>
+            <h2 class="section-title">La rigueur comme point commun</h2>
+          </div>
+          <div>
+            <p>Mon parcours professionnel m’a appris à vérifier des informations, repérer des incohérences, suivre des procédures complexes et rechercher l’origine d’un problème. Des réflexes que je mets aujourd’hui au service de mon apprentissage du QA Testing dans le jeu vidéo.</p>
+            <a class="text-link" href="#">En savoir plus →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Prêt à transformer cette démarche en expérience professionnelle.</h2>
+          <p>Je recherche une première opportunité en QA Testing dans l’industrie du jeu vidéo.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a class="btn btn-primary" href="mailto:">Me contacter</a>
+            <a class="btn btn-secondary" href="#">Voir mon CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>Thibault Bonvicini</strong> · QA Tester Junior</div>
+      <div class="footer-links">
+        <a href="#">LinkedIn</a>
+        <a href="https://github.com/Thibault-Bonvicini">GitHub</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
