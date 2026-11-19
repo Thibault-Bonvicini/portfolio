@@ -37,6 +37,12 @@
       }
     });
   });
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      close.focus();
+    }
+  });
   close.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
