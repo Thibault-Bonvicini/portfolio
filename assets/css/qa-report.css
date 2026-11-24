@@ -1,0 +1,14 @@
+/* Continuité graphique du rapport — indépendante des bannières. */
+.qa-report{--report-rgb:40,121,219;--report-ink:#2466ae;position:relative;isolation:isolate;background:radial-gradient(ellipse 420px 520px at 100% 12%,rgba(var(--report-rgb),.085),transparent 100%),radial-gradient(ellipse 380px 560px at 0% 62%,rgba(var(--report-rgb),.055),transparent 100%),#fff;}
+.qa-report.report-01{--report-rgb:150,116,223;--report-ink:#7351b5}
+.qa-report.report-03{--report-rgb:38,159,153;--report-ink:#187d79}
+.qa-report.report-08{--report-rgb:200,148,73;--report-ink:#95631e}
+
+.qa-report .section:before{width:4px;transform:translateX(-1px);background:rgba(var(--report-rgb),.34)}
+.qa-report .section-head .step{color:var(--report-ink);border-color:rgba(var(--report-rgb),.55);background:color-mix(in srgb,rgb(var(--report-rgb)) 10%,white)}
+.qa-report .section-head:after{background:rgba(var(--report-rgb),.65)}
+.qa-report .section-head h2{flex:0 1 auto;min-width:0}
+.qa-report .section-head h2:after{content:"";display:block;width:42px;height:2px;margin-top:5px;background:rgba(var(--report-rgb),.55)}
+@media(max-width:850px){.qa-report{background:radial-gradient(ellipse 220px 500px at 100% 15%,rgba(var(--report-rgb),.055),transparent),#fff}}
+
+@media print{.qa-report{background:white}}

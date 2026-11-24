@@ -1,0 +1,20 @@
+/* Maquette V1 — bannière QA, gameplay / tutoriel */
+.hero{--accent:var(--qa-accent,#a5c4ff);background:radial-gradient(ellipse at 50% 35%,#223d64 0%,#142944 55%,#101e30 100%);border-bottom:3px solid #648fe0;color:#eef4ff;isolation:isolate}
+.hero:before{inset:0;width:100%;background-image:linear-gradient(rgba(140,180,240,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(140,180,240,.055) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(90deg,transparent 0%,transparent 15%,#000 23%,transparent 40%,transparent 60%,#000 77%,transparent 85%,transparent 100%);opacity:1}
+.hero:after{display:none}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.65}
+.hero .wrap{padding-bottom:22px}.hero .crumb{color:#bdcce1}.hero .crumb a{color:var(--qa-crumb,#a5caff)}.hero .eyebrow{color:var(--accent);letter-spacing:.14em}.hero h1{color:#f7f9ff}.hero .lead{color:#c6d6ec}.hero .num{background:#294a78;border:1px solid #739ce3;color:#e7efff;box-shadow:0 0 24px #6699ee22}.hero-divider:before,.hero-divider:after{background:linear-gradient(90deg,transparent,#7296c9)}.hero-divider span{background:var(--qa-diamond-bg,#1d3555);border-color:var(--qa-diamond,#9bbcf4)}.hero .chip:not(.minor):not(.resolved):not(.major){background:#203958;border-color:#58749b;color:#e5efff}.hero .version-rail{background:#142941;border-color:#486487;color:#c7d8ee}.hero .version-rail b{color:#f0f5ff}.hero .version-arrow{color:var(--qa-arrow,#9abaff)}
+@media(max-width:850px){.hero-art{opacity:.27}.hero:before{width:100%;opacity:.7}.hero .wrap{padding-bottom:18px}}
+
+.hero{background:radial-gradient(ellipse at 50% 40%,var(--qa-center,#19477a) 0%,var(--qa-mid,#0b2c50) 48%,var(--qa-edge,#071c34) 100%);border-bottom:5px solid var(--qa-bottom,#2879db)}
+.hero:before{mask-image:none;opacity:1;background-image:linear-gradient(var(--qa-grid,rgba(100,166,235,.085)) 1px,transparent 1px),linear-gradient(90deg,var(--qa-grid,rgba(100,166,235,.085)) 1px,transparent 1px);background-size:32px 32px}
+.hero-art{opacity:1;overflow:hidden}.hero .num{background:linear-gradient(135deg,var(--qa-num1,#2688ee),var(--qa-num2,#347ee0));border-color:var(--qa-num-border,#499cf4);box-shadow:0 0 24px var(--qa-glow,#318cf56b);color:white}.hero .chip:not(.minor):not(.resolved):not(.major){background:var(--qa-chip,#0d3157);border-color:var(--qa-border,#438bdb)}.hero .version-rail{background:var(--qa-rail,#092747);border-color:var(--qa-border,#438bdb)}.hero .lead{color:#e0ebfa}.hero-divider:before,.hero-divider:after{background:linear-gradient(90deg,transparent,var(--qa-divider,#82b9ff))}
+@media(max-width:850px){.hero-art{opacity:.22}.hero:before{opacity:.75}}@media(max-width:560px){.hero-art{opacity:.13}}
+
+.hero.qa-01{--qa-accent:#c4b5fd;--qa-center:#393565;--qa-mid:#25254b;--qa-edge:#141c32;--qa-bottom:#9674df;--qa-num1:#8060ca;--qa-num2:#6d50b2;--qa-num-border:#b49aef;--qa-glow:#9674df55;--qa-chip:#302b50;--qa-border:#8067b6;--qa-rail:#211f40;--qa-divider:#c4b5fd;--qa-diamond:#c4b5fd;--qa-diamond-bg:#302b50;--qa-arrow:#c4b5fd;--qa-crumb:#c4b5fd;--qa-grid:rgba(167,139,250,.085)}
+
+.hero.qa-03{--qa-accent:#9de9df;--qa-center:#185653;--qa-mid:#103c43;--qa-edge:#0b2635;--qa-bottom:#269f99;--qa-num1:#239e96;--qa-num2:#187f81;--qa-num-border:#66d0c3;--qa-glow:#269f9955;--qa-chip:#153f46;--qa-border:#429c99;--qa-rail:#10343c;--qa-divider:#83d9d1;--qa-diamond:#9de9df;--qa-diamond-bg:#153f46;--qa-arrow:#9de9df;--qa-crumb:#9de9df;--qa-grid:rgba(78,195,183,.085)}
+
+.hero.qa-08{--qa-accent:#f3ce90;--qa-center:#51432f;--qa-mid:#34313a;--qa-edge:#172333;--qa-bottom:#c89449;--qa-num1:#aa7837;--qa-num2:#94672e;--qa-num-border:#e8b45f;--qa-glow:#c8944955;--qa-chip:#40382f;--qa-border:#ad864e;--qa-rail:#302b2a;--qa-divider:#e8b45f;--qa-diamond:#f3ce90;--qa-diamond-bg:#40382f;--qa-arrow:#f3ce90;--qa-crumb:#f3ce90;--qa-grid:rgba(232,180,95,.085)}
+
+.hero.qa-banner:not(.qa-05):before{background-position:0 0;transform:none}.hero.qa-banner:not(.qa-05) .wrap{position:relative;z-index:2;text-align:center}.hero.qa-banner:not(.qa-05) .hero-art{pointer-events:none}
