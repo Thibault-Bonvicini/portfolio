@@ -1,0 +1,11 @@
+/* Shared link to the complete QA report. */
+.qa-pdf-actions{display:flex;justify-content:flex-end;margin:0 0 28px}
+.qa-pdf-button{--pdf-rgb:var(--report-rgb,40,121,219);--pdf-ink:var(--report-ink,#2466ae);display:flex;align-items:center;gap:13px;max-width:100%;padding:14px 18px;border:1px solid rgba(var(--pdf-rgb),.5);border-radius:9px;background:#fff;color:var(--pdf-ink);text-decoration:none;box-shadow:0 2px 8px rgba(var(--pdf-rgb),.04);transition:background-color .15s,box-shadow .15s,border-color .15s}
+.qa-pdf-button:hover{background:rgba(var(--pdf-rgb),.045);border-color:var(--pdf-ink);box-shadow:0 4px 12px rgba(var(--pdf-rgb),.1)}
+.qa-pdf-button:focus-visible{outline:3px solid var(--pdf-ink);outline-offset:4px}
+.qa-pdf-button svg{width:24px;height:24px;flex:none}
+.qa-pdf-button .qa-pdf-external{width:18px;height:18px;margin-left:8px}
+.qa-pdf-copy{min-width:0}.qa-pdf-copy strong{display:block;font-size:.94rem;line-height:1.4;font-weight:750}.qa-pdf-copy small{display:block;margin-top:3px;font-size:.77rem;line-height:1.4;color:#617995}
+.qa-pdf-actions-project{margin:28px auto 0}
+@media(max-width:560px){.qa-pdf-button{width:100%;gap:10px;padding:13px}.qa-pdf-copy strong{font-size:.88rem}.qa-pdf-button .qa-pdf-external{margin-left:auto}.qa-pdf-actions{margin-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.qa-pdf-button{transition:none}}
